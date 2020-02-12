@@ -1,0 +1,17 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: zinc make
+    
+    steps:
+
+    - name: cd
+      run: cd qmk_firmware
+    - name: bag fix
+      run: source ~/qmk_utils/activate_msys2.sh
+    - name: make hex file example
+      run: make zinc:hiyokoya
